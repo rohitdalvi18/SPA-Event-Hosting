@@ -1,0 +1,52 @@
+:root {
+  font-family: 'Poppins', sans-serif;
+  color-scheme: dark;
+  color: #E0E0E0;
+  /* background-color: #121212; */
+}
+
+.App-bg{
+  background-image: url('https://images.pexels.com/photos/3688579/pexels-photo-3688579.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  filter: blur(2px);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #BB86FC;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button, .btn {
+  border-radius: 8px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 600;
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid #BB86FC;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #BB86FC;
+  color: black;
+  color: beige;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #03DAC6;
+}
+
+a:hover {
+  color: #ffffff;
+}
