@@ -3,7 +3,7 @@ services:
     image: mysql:8
     container_name: my_sql
     environment:
-      MYSQL_DATABASE: test
+      MYSQL_DATABASE: sf-events-db
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: user
       MYSQL_PASSWORD: pass
@@ -12,7 +12,7 @@ services:
     volumes:
       - ./database/db_init.sql:/docker-entrypoint-initdb.d/db_init.sql
     healthcheck:
-      test: ["CMD-SHELL", "mysql -u root -proot -e 'USE test;'"]
+      test: ["CMD-SHELL", "mysql -u root -proot -e 'USE sf-events-db;'"]
       interval: 20s
       timeout: 30s
       retries: 10
