@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
+
+
 const Events = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
         const fetchAllEvents = async () => {
             try {
-                const res = await axios.get("http://localhost:8800/events");
+                const res = await axios.get(`${API_BASE_URL}/events`);
                 setEvents(res.data);
             } catch (err) {
                 console.log(err);
@@ -19,7 +22,7 @@ const Events = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8800/events/${id}`);
+            await axios.delete(`${API_BASE_URL}/events/${id}`);
             window.location.reload();
         } catch (err) {
             console.log(err);
@@ -32,7 +35,7 @@ const Events = () => {
             <Link to="/san-francisco-events/add" className="btn primary-button">Create a New Event</Link>
             <br/>
             <div className="events">
-                {events.map(event => (
+                {events?.map(event => (
                     <div className="event" key={event.id}>
                         {event.cover && <img src={event.cover} alt="Event Cover" />}
                         <h2>{event.title}</h2>

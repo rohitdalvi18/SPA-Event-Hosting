@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
+
 const UpdateEvent = () => {
     const [event, setEvent] = useState({
         title: "",
@@ -21,7 +23,7 @@ const UpdateEvent = () => {
     const handleClick = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:8800/events/${eventId}`, event);
+            await axios.put(`${API_BASE_URL}/events/${eventId}`, event);
             navigate("/san-francisco-events/");
         } catch (err) {
             console.log(err);
