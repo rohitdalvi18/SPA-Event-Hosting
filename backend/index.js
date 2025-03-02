@@ -1,14 +1,17 @@
 import express  from "express";
 import mysql from "mysql2"
 import cors from "cors"
+import dotenv from "dotenv";
 
 const app = express();
 
+dotenv.config();
+
 const db = mysql.createConnection({
-  host: "db",
-  user: "user",
-  password: "pass",
-  database: "test"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
 })
 
 app.use(express.json())//return json data using the api server postman
