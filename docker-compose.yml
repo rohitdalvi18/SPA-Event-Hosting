@@ -26,7 +26,7 @@ services:
         condition: service_healthy
     container_name: my_backend
     ports:
-      - "80:8800"
+      - "8800:8800"
 
   frontend:
     build:
@@ -34,6 +34,6 @@ services:
       dockerfile: Dockerfile
     container_name: my_frontend
     ports:
-      - "80:5173"
+      - "5173:5173"
     depends_on:
       - backend
