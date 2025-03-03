@@ -18,12 +18,12 @@ app.use(express.json())//return json data using the api server postman
 
 app.use(cors())
 
-app.get("/", (req,res)=>{
+app.get("/api", (req,res)=>{
     res.json("Hello World from the backend!!!")
 })
 
 //postman -> get method  http://localhost:8800/events
-app.get("/events", (req,res)=>{
+app.get("/api/events", (req,res)=>{
     const query = "SELECT * FROM events"
     db.query(query, (err,data)=>{
           if(err) return res.json(err)
@@ -41,7 +41,7 @@ app.get("/events", (req,res)=>{
 // "cover": "cover from client"
 // }
 
-  app.post("/events", (req,res)=>{
+  app.post("/api/events", (req,res)=>{
     const query = "INSERT INTO events (`title`, `description`, `price`, `cover`) VALUES (?)"
     const values = [
        req.body.title,
@@ -56,7 +56,7 @@ app.get("/events", (req,res)=>{
     })
   })
 
-  app.delete("/events/:id", (req,res)=>{
+  app.delete("/api/events/:id", (req,res)=>{
       const eventID = req.params.id
       const query = "DELETE FROM events WHERE id = ?"
 
@@ -66,7 +66,7 @@ app.get("/events", (req,res)=>{
       } )
   })
 
-  app.put("/events/:id", (req,res)=>{
+  app.put("/api/events/:id", (req,res)=>{
     const eventID = req.params.id
     const query = "UPDATE events SET `title`= ?, `description`= ?, `price`= ?, `cover`= ? WHERE id = ?";
 

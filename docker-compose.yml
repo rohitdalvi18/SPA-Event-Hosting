@@ -26,7 +26,7 @@ services:
         condition: service_healthy
     container_name: my_backend
     ports:
-      - "8800:8800"
+      - "80:8800"
 
   frontend:
     build:
