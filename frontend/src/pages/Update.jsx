@@ -14,7 +14,7 @@ const UpdateEvent = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
-    const eventId = location.pathname.split("/")[3];
+    const eventId = location.pathname.split("/")[2];
 
     const handleChange = (e) => {
         setEvent(prev => ({ ...prev, [e.target.name]: e.target.value }));
