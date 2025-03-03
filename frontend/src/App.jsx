@@ -14,10 +14,10 @@ function App() {
       <div className="container">
       <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/san-francisco-events" element={<Events />} />
-            <Route path="/san-francisco-events/add" element={<Add />} />
-            <Route path="/san-francisco-events/update/:id" element={<Update />} />
+            {/* <Route path="/" element={<Home />} /> */}
+            <Route path="/" element={<Events />} />
+            <Route path="/add" element={<Add />} />
+            <Route path="/update/:id" element={<Update />} />
           </Routes>
         </BrowserRouter>
       </div>

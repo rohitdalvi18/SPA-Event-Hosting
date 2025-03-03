@@ -24,7 +24,7 @@ const UpdateEvent = () => {
         e.preventDefault();
         try {
             await axios.put(`${API_BASE_URL}/events/${eventId}`, event);
-            navigate("/san-francisco-events/");
+            navigate("/");
         } catch (err) {
             console.log(err);
         }

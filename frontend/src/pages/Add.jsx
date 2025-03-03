@@ -22,7 +22,7 @@ const AddEvent = () => {
         e.preventDefault();
         try {
             await axios.post(`${API_BASE_URL}/events`, event);
-            navigate("/san-francisco-events/");
+            navigate("/");
         } catch (err) {
             console.log(err);
         }

@@ -32,7 +32,7 @@ const Events = () => {
     return (
         <div className='events-container' style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent:"center"}}>
             <h1>Local Event Listings <br/> <span style={{color:"beige"}}>San Francisco</span></h1>
-            <Link to="/san-francisco-events/add" className="btn primary-button">Create a New Event</Link>
+            <Link to="/add" className="btn primary-button">Create a New Event</Link>
             <br/>
             <div className="events">
                 {events?.map(event => (
@@ -43,7 +43,7 @@ const Events = () => {
                         <span>${event.price}</span>
                         <div className="buttons">
                             <button className="delete-button" onClick={() => handleDelete(event.id)}>Delete</button>
-                            <Link to={`/san-francisco-events/update/${event.id}`}><button className='update-button'>Update</button></Link>
+                            <Link to={`/update/${event.id}`}><button className='update-button'>Update</button></Link>
                         </div>
                     </div>
                 ))}
